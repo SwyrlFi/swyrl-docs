@@ -5,6 +5,11 @@ export default {
       <span style={{ fontWeight: '800', fontSize: '1.125rem' }}>Swyrl Protocol</span>
     </>
   ),
+  darkMode: true,
+  nextThemes: {
+    defaultTheme: 'light',
+    storageKey: 'theme'
+  },
   chat: {
     link: 'https://discord.com/invite/Swyrl',
     icon: (

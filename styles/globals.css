@@ -1,15 +1,3 @@
-body {
-  background-color: #ffffff !important;
-}
-
-.nx-bg-white {
-  background-color: #ffffff !important;
-}
-
-html[class~="light"] body {
-  background-color: #ffffff !important;
-}
-
 /* Remove padding between theme switch and footer */
 footer {
   margin-top: 0 !important;
@@ -21,4 +9,30 @@ article + * {
 
 .nx-mx-auto.nx-flex.nx-max-w-\\[90rem\\] {
   padding-bottom: 0 !important;
+}
+
+/* Theme switch component unified colors */
+.nextra-sidebar-footer {
+  background-color: transparent !important;
+}
+
+/* Dark mode support for custom footer */
+html.dark footer {
+  border-color: hsl(var(--nextra-primary-hue), 20%, 30%) !important;
+}
+
+html.dark footer h3 {
+  color: hsl(var(--nextra-primary-hue), 20%, 90%) !important;
+}
+
+html.dark footer p {
+  color: hsl(var(--nextra-primary-hue), 10%, 70%) !important;
+}
+
+html.dark footer a {
+  color: hsl(var(--nextra-primary-hue), 10%, 70%) !important;
+}
+
+html.dark footer a:hover {
+  color: hsl(var(--nextra-primary-hue), 60%, 70%) !important;
 }
