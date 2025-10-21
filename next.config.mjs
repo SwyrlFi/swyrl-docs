@@ -10,7 +10,7 @@ export default withNextra({
     return [
       {
         source: '/',
-        destination: '/overview',
+        destination: '/protocol/overview',
         permanent: true
       }
     ]

@@ -1,3 +1,5 @@
+import { useConfig } from 'nextra-theme-docs'
+
 export default {
   logo: (
     <>
@@ -29,12 +31,17 @@ export default {
   search: {
     placeholder: 'Search documentation...'
   },
-  useNextSeoProps() {
-    return {
-      titleTemplate: '%s – Swyrl Protocol'
-    }
+  head: function Head() {
+    const { title } = useConfig()
+    return (
+      <>
+        <title>{title ? `${title} | Docs` : 'Swyrl Protocol Docs'}</title>
+        <meta name="description" content="Swyrl Protocol Documentation" />
+      </>
+    )
   },
-  primaryHue: 200,
+  primaryHue: 222,
+  primarySaturation: 100,
   footer: {
     component: (
       <footer style={{ borderTop: '1px solid #e5e7eb', padding: '40px 20px', marginTop: '0' }}>
