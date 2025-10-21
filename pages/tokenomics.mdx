@@ -1,0 +1,27 @@
+# Tokenomics
+
+Swyrl’s tokenomics are crafted to balance governance participants, liquidity providers, and ensure long-term sustainability. The native token $SWYRL lies at the center of this ecosystem, acting as both the governance token and the fuel for incentive mechanisms.
+
+#### **$SWYRL Utility**
+
+$SWYRL is the primary token of Swyrl. Its core utility is for governance and staking. By itself, holding $SWYRL allows one to participate in the protocol’s governance when staked (converted into xSWYRL/S33). $SWYRL holders are encouraged to stake their tokens to unlock the full suite of benefits: voting power, fee distribution, and reward boosts. In its unstaked form, $SWYRL can be freely traded or used for liquidity provision, but it does not yield governance rewards until staked. This creates a natural incentive to convert circulating $SWYRL into staked form, aligning holders with the long-term health of the protocol. The more people stake, the more skin-in-the-game for governance, which helps decentralize control among active community members.
+
+#### **Emissions Distribution**
+
+Swyrl follows an emission schedule for $SWYRL to incentivize liquidity mining and participation. New $SWYRL tokens are emitted each epoch and 100% distributed to liquidity providers, as directed by governance votes. This mechanism is similar to Curve’s gauge rewards. Unlike simplistic yield farming, the allocation is decided by $SWYRL stakers. If a particular pool (say SWYRL-MON pool) is deemed important, voters can allocate a higher weight to it, causing a larger share of the weekly $SWYRL emissions to go to that pool’s LPs. This vote-driven emission model ensures that incentives follow demand: only pools that garner enough community support (or bribe incentives) get substantial rewards.
+
+One of the most powerful features of Swyrl’s yield mining is Competitive Farming, a mechanism that rewards liquidity providers based on the quality and productivity of their liquidity. In Swyrl’s CLMM (Concentrated Liquidity Market Maker) pools, providers can select the exact price ranges where their liquidity is active. The tighter and more optimized the chosen range, the greater the potential rewards earned while the market trades within it. This creates a strong incentive for liquidity providers to execute at precision, deploying capital at precise ratios and depths to maximize efficiency and yield. Importantly, Competitive Farming runs in parallel with Simple Farming. For users who prefer a more straightforward approach, Swyrl also supports traditional V2-style volatile and stable pools, where liquidity can be deposited without managing ranges. This dual model ensures that both sophisticated and casual users can participate and benefit, whether by fine-tuning their liquidity strategies in CLMM pairs or opting into the simplicity of V2 farming.
+
+#### **Multiple Staking Rewards**
+
+SWYRL stakers (xSWYRL& S33 holders) earn rewards, fees and incentives, compared to the emissions to LPs. The protocol generates revenue from trading fees in all its pools. These fees are 100% directed to SWYRL stakers as a reward for their governance participation, weighted by their votes or proportion of stake. This turns xSWYRL and S33 into a yield-bearing asset backed by the exchange’s actual usage.
+
+On top of trading fees, voting incentives can also be granted to SWYRL stakers. Rewards offered by external protocols to sway votes are effectively extra rewards for stakers who vote via Bribes.&#x20;
+
+Additionally, as explained in thePvP Rebasing & Exit Penalties, exit penalties from the PvP rebase are redistributed to remaining stakers, providing another form of reward.&#x20;
+
+Altogether, the yield for a dedicated SWYRL staker comes from multiple streams: a share of swap fees, a share of any penalty redistribution, and any bribe income or voting incentive. This multi-faceted reward structure makes staking attractive and aligns the economic interests of $SWYRL holders with the success of the exchange.
+
+#### **Bribes**
+
+A crucial aspect of Swyrl’s tokenomics is the ability for anyone (especially other protocols) to influence emission distribution via bribes. Bribing is an established mechanism (popularized by Curve’s Convex wars, and present in Solidly/Aerodrome ecosystems) where external parties offer incentives to $SWYRL voters to vote for a specific liquidity pool’s gauge. For example, suppose a new project “XYZ” wants to bootstrap deep liquidity for its token XYZ on Swyrl. They can post a bribe on Swyrl: say they offer a certain amount of XYZ tokens (or USDC, or any token) to the pool’s gauge. This bribe will be claimable by anyone who votes for the XYZ pool during that epoch. If the bribe is generous relative to the amount of voting weight, it translates into a high extra APR for those voters.

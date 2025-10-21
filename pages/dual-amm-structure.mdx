@@ -1,0 +1,64 @@
+# Dual AMM Structure
+
+Swyrl employs a **dual AMM structure** that supports both **stable pools** and **volatile pools** for liquidity provisioning. This means liquidity providers (LPs) can choose the pool type best suited for their asset pair. Swyrl also incorporates **concentrated liquidity provision**, enabling liquidity providers to deploy capital more efficiently and achieve deeper market liquidity.
+
+***
+
+### Stable Pools
+
+Designed for asset pairs that trade around a **stable price parity** (e.g. two stablecoins or synthetically pegged assets). These pools use a **curve formula optimized for minimal slippage** when assets have equal or near-equal value.
+
+#### Benefits:
+
+* **Extremely low slippage**
+* **Efficient pricing**
+* **Liquidity concentrated around the peg**
+
+Traders swapping between like-kind assets in stable pools enjoy a smoother and more cost-effective experience.
+
+***
+
+### Volatile Pools
+
+Meant for asset pairs with **independent, freely moving prices** (e.g. $SWYRL and $MON, or any two distinct tokens). These pools use the traditional **constant product formula** (`x * y = k`), similar to **Uniswap V2**, which is more suitable for volatile price swings.
+
+#### Benefits:
+
+* **Supports uncorrelated assets**
+* **Robust liquidity across wide price ranges**
+* **Simple and proven model for volatile markets**
+
+***
+
+### Unified Platform for All Trading Needs
+
+By combining **stable and volatile AMMs**, Swyrl covers the **full spectrum of trading** on a single platform.
+
+An **automated smart order routing system** directs trades through the most optimal path:
+
+* **Stable-to-stable**: Uses a stable pool directly.
+* **Unrelated tokens**: May route through intermediate pools (e.g. via a stablecoin bridge or common trading pair).
+
+This smart routing guarantees that traders **always get the best price** available across Swyrl’s liquidity network.
+
+***
+
+### Concentrated Liquidity Provisioning
+
+Swyrl also integrates **concentrated liquidity provisioning** (inspired by **Uniswap v3**) into its pool designs.
+
+LPs can **concentrate their liquidity into specific price ranges** rather than across the entire curve.
+
+#### Advantages for LPs:
+
+* **More efficient capital usage**
+* **Higher fee earnings**
+* **Deeper effective liquidity with fewer tokens**
+
+By focusing liquidity where most trading occurs, LPs help:
+
+* **Increase capital efficiency**
+* **Provide greater market depth**
+* **Enable tighter spreads for traders**
+
+This means Swyrl can facilitate **large trades with low slippage**, **without requiring enormous liquidity** across all price ranges.

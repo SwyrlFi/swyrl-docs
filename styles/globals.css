@@ -1,0 +1,24 @@
+body {
+  background-color: #ffffff !important;
+}
+
+.nx-bg-white {
+  background-color: #ffffff !important;
+}
+
+html[class~="light"] body {
+  background-color: #ffffff !important;
+}
+
+/* Remove padding between theme switch and footer */
+footer {
+  margin-top: 0 !important;
+}
+
+article + * {
+  padding-bottom: 0 !important;
+}
+
+.nx-mx-auto.nx-flex.nx-max-w-\\[90rem\\] {
+  padding-bottom: 0 !important;
+}

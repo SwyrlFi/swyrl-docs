@@ -1,0 +1,65 @@
+# Liquid Governance
+
+At the heart of Swyrl's governance and incentive alignment is the **liquid governance framework** for the $SWYRL token, offering the benefits of vote-escrow staking without the inflexibility of long-term locks. This framework creates a dynamic balance where participants can enter or exit the governance staking pool at will – but with built-in incentives to stay long-term.
+
+***
+
+### xSWYRL: The Staked Core
+
+**Stake $SWYRL → xSWYRL**
+
+Users stake $SWYRL into Swyrl's core governance contract to receive xSWYRL.
+
+xSWYRL is the fundamental staked version of $SWYRL, capturing voting power and receiving all rewards (fees, rewards, rebase, etc.).
+
+Unlike a classic veToken, xSWYRL is not permanently locked. Instead, users can exit with certain penalties or vesting schedules that discourage short-term flips but don't fully trap capital.
+
+#### Benefits of xSWYRL
+
+* **Governance Power**: xSWYRL holders vote on gauge allocations, steering SWYRL emissions to different liquidity pools.
+* **Fee Accrual**: Protocol trading fees are distributed to xSWYRL stakers.
+* **Anti-Dilution Rebases**: If other stakers exit early and pay penalties, remaining xSWYRL stakers benefit from additional rebase rewards.
+
+***
+
+### S33: The Liquid Staking Derivative
+
+**"Re-stake" xSWYRL → S33**
+
+Once a user has xSWYRL, they can optionally deposit it into a liquid staking contract to obtain S33.
+
+The liquid staking contract mints an S33 token representing a **liquid, auto-compounding derivative** of xSWYRL that can be traded on the market at any time. In other words, your xSWYRL is "wrapped" to create a more flexible asset.
+
+Because S33 is minted from staked xSWYRL rather than from raw $SWYRL, it inherits the rewards and governance aspects while adding a layer of automation (rebase logic, penalty redistribution, etc.).
+
+#### Benefits of S33
+
+* Holding S33 gives you a liquid claim on the underlying xSWYRL, granting access to **ALL** the base rewards that xSWYRL entitles its holders to.
+* S33 typically auto-compounds or "rebases," so your share of the underlying xSWYRL can grow over time.
+* If you wish to exit, you can redeem S33 back to xSWYRL. You can also trade x33 on secondary markets, as it's designed to be fungible.
+
+***
+
+### PvP Rebasing & Exit Penalties
+
+Any user exiting xSWYRL early (depending on the contract's structure) pays a penalty. That penalty is redistributed to remaining stakers via rebases. This "Player vs Player (PvP)" dynamic incentivizes participants to hold longer, since those who leave early subsidize the yield of those who stay.
+
+***
+
+### Governance Implications
+
+**Voting with xSWYRL vs. S33:**
+
+* If you hold xSWYRL, you can vote directly in gauge allocations and governance proposals.
+* If you hold S33, the strategy will auto-vote your underlying xSWYRL.
+
+In all cases, the protocol recognizes that S33 tokens collectively represent a chunk of xSWYRL staked in the system – so they carry real governance weight.
+
+***
+
+### Why This Two-Level Staking?
+
+* **Tradability & Liquidity:** Crucially, S33 tokens are fungible assets, freely tradable on secondary markets. Unlike xSWYRL (which represents a direct governance stake and cannot be transferred), users holding x33 can sell, transfer, or use these tokens across various DeFi protocols. This liquidity provides stakers the ability to instantly reposition or exit their staking exposure without waiting for vesting periods or incurring immediate penalties.
+* **Flexibility**: Some users prefer the simplicity of xSWYRL (one stake, direct governance). Others want advanced yield and instant liquidity – that's where S33 shines.
+* **No Forced Lock**: Both layers are exitable. $SWYRL → xSWYRL can be exited with a penalty or vesting. xSWYRL → S33 also can be reversed, letting you reclaim xSWYRL. That xSWYRL can then be vested back into $SWYRL if you want to leave entirely. At each step, there's no permanent lock, just an economic deterrent to short-term flipping.
+* **Elevated Rewards**: Ultimately, S33 tokens exist to maximize yield for stakers. They typically auto-claim bribes or fees, rebase them, and distribute any penalties from early exits among loyal holders. If the strategy is always maximizing the highest return and adjusts on each epoch, stSWYRL holders can see higher returns than standard xSWYRL stakers, albeit with more complexity.
