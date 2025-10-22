@@ -1,2 +1,167 @@
-# s(3,3)
+# What is s33?
 
+To understand how **s33 works,** we need to first **understand ve(3,3) (metaDEX):**
+
+## Origins of metaDEX
+
+Andre Cronje revolutionized exchanges by creating a system where all participants are incentivized to act in the best interest of each other and the exchange. While not perfect, it was a huge step forward as a means to align incentives with participants.
+
+Modern implementations **have proven metaDEX can achieve massive scale** and sustainable revenue, but they rely on artificial restrictions to maintain participation. **s33 represents a fundamental reimagining**—instead of forcing compliance through locks, s33 creates strong incentives where users *want* to stay because the system rewards active participation and naturally concentrates value among those who contribute most. **To understand metaDEX and ve(3,3), we need to break down two key concepts:**
+
+### Rebase
+
+A core element of the ve(3,3) model was the rebasing of locked positions to prevent a user from being diluted by emissions, OHM (3,3). This anti-dilution mechanic for veTOKEN holders allowed them to **maintain the same ownership without having to buy and lock more tokens.**
+
+Here is a crude visual representation of it in action:
+
+![Placeholder]()
+
+xSWYRL addresses dilution with a unique "PVP Rebase", which acts both as dilution protection and additional yield. Instead of minting new tokens to locked positions, **s33 does two things:**
+
+1. xSWYRL stakers earn value from protocol fees and voting incentives.
+2. xSWYRL allows holders to exit early, sacrificing their voting power. The forfeited underlying tokens are streamed to existing stakers proportional to their positions.
+
+### Vote Escrow (ve)
+
+The second concept you should understand is vote escrow **(ve)**—a fundamental change to governance and on-chain voting systems that introduced **time-weighted voting.**
+
+> Instead of voting with token amount **a**, tokens are lockable in a *VotingEscrow*, now shown as **veA**, for a selectable locktime
+
+Your vote is not only calculating total tokens held, but also the lock duration. Curve first introduced this in a 2020 whitepaper.
+
+A visual representation can be seen below:
+
+![Placeholder]()
+
+This system intentionally creates a **risk vs. reward** scenario, where more governance power is given to active participants continually extending their locks. s33 has a similar decision matrix, **but users do not have to lock tokens to participate.**
+
+## ve(3,3) ➡ s33
+
+### ve(3,3)
+
+ve(3,3) has a flaw: the absence of an exit mechanism means it relies on static commitment rather than dynamic value creation. Without such a measure, the system accumulates dead voting power, as users hold veTOKENs indefinitely without active participation, still influencing the protocol without contributing to its success. Even the most successful metaDEXs require upfront commitments to earn meaningful rewards, creating a system driven by obligation rather than value. Users can exit xSWYRL at any time, which transforms the incentive structure from a lock-up trap to active participation motivated by real value.
+
+Now that you understand ve(3,3), the question persists:
+
+**How does s33 improve this?**
+
+### s33
+
+**xSWYRL is where s33 shines** by creating an **incentive system** that responds to real user behavior. While traditional metaDEXs create value through artificial scarcity and forced commitments, s33 generates value through **genuine user activity**. When users exit, their value flows to remaining participants. This creates a **dynamic system** where rewards scale with protocol success and ownership naturally concentrates among those who contribute most value, scaling Swyrl without requiring artificial lock-ups or arbitrary restrictions.
+
+### Exit mechanism
+
+Swyrl implements a unique **exit rebase** where exit penalties are streamed to xSWYRL stakers. When users exit their xSWYRL position early, **100%** of the forfeited tokens are streamed to existing xSWYRL stakers proportional to their positions. This creates a powerful incentive structure where:
+
+1. Rewards scale with the protocol **(user activity)**
+   - Strong incentives to stay instead of locks
+2. Removes the need for locks or wrappers
+   - **xSWYRL** solves the need for token lock-ups
+   - **S33** (Liquid staked xSWYRL) solves the need for liquid wrappers
+
+## Previous DEX Limitations
+
+The history of decentralized finance has been marked by repeated attempts to solve the **"DEX Trilemma"** - the challenge of aligning incentives between **traders**, **liquidity providers**, and **token holders**. While Andre Cronje's metaDEX model theoretically solved this by balancing incentives between all participants—long lock-ups created a **high friction system** that forced users to lock tokens to participate equitably in the incentive model.
+
+![Placeholder]()
+
+*Credit to the Aerodrome team for the original graphic and concept.*
+
+Uniswap focused on a simple **two-party system**: traders and liquidity providers (LPs). ve(3,3) improved this by properly aligning incentives with token holders as well, but access to those incentives was **unfair and heavily skewed towards protocols.**
+
+| Uniswap | ve(3,3) | s33 |
+|---------|---------|-----|
+| - LP returns **capped at 100% of protocol fees**<br/>- Susceptible to **vampire attacks**<br/>- **ZERO** token alignment | - **Forced lock-ups** to participate<br/>- **Unfair access** to rewards<br/>- **No exit** mechanism | - Can **exit anytime**<br/>- **Strong incentives** instead of lock-ups<br/>- **S33** liquid staking |
+
+**The result?** A more fluid and accessible system that still provides strong incentives, while removing much of the friction that still plagues ve-token models **(token lock-ups)**.
+
+![Placeholder]()
+
+| Traders | Liquidity Providers | xSWYRL |
+|---------|---------------------|---------|
+| 1. Benefit from Swyrl's deep liquidity and **best price execution**<br/>2. Access to the most competitive fees on the network **(dynamic fees, custom fee-splits)**<br/>3. Exposure to assets beyond spot trading **(options, leverage, other DeFi protocols)** | 1. Earn token emissions based on liquidity productivity<br/>   - Competitive farming + dynamic fees = network-leading productive liquidity<br/>2. Aligned LPs benefit from SWYRL emissions directed to productive liquidity | 1. Receive 100% of value created **(fees and incentives)**<br/>2. Receive 100% of protocol fees through xSWYRL staking<br/>3. Earn rewards from exits<br/>4. Auto-compounding and vote-optimizing via **xSWYRL** LST |
+
+## Directing Emissions
+
+As discussed in our DEX Trilemma, prior to the metaDEX users had no choice but to suffer from misaligned incentives from centralized parties. This led to inefficient capital allocation and reduced long-term sustainability for exchanges. s33 solved this by putting **emission control directly in the hands of xSWYRL stakers who are incentivized to optimize for value.**
+
+Directing emissions is an extremely powerful use case for xSWYRL stakers as it gives the holders primary power over what the platform incentivizes. If a token continually underperforms via fees, xSWYRL holders are going to be less incentivized to vote for it, reducing incentives to it.
+
+**Less rewards from the pool = less emissions = less liquidity.**
+
+Each week, in what we call Epoch, xSWYRL stakers make a choice on what liquidity pools to direct SWYRL emissions to. Based on that vote which concludes every `Thursday 00:00 UTC`, SWYRL emissions are then directed to the chosen liquidity. You can read more about voting and how emission distribution is calculated here.
+
+Voters earn **swap fees and vote incentives** in a lump sum immediately after epoch flip. These rewards are based on the liquidity you voted for in the previous epoch. If you vote for a liquidity pool in Epoch X, you will receive your accumulated rewards instantly when Epoch Y begins, proportional to your vote compared to the total votes.
+
+## Vote Incentives
+
+On Swyrl we utilize two different types of vote incentives: **liquidity pool incentives** & **voter incentives**. A vote incentive can be in the form of ANY whitelisted token. As a protocol, incentivizing your liquidity will attract voters and result in higher directed emissions. As an xSWYRL staker, you earn a portion of the incentives.
+
+A **voter incentive** is designated at anytime during the current Epoch and paid out in lump sum to xSWYRL voters. It is displayed after the incentive is made and will influence votes until Epoch rollover.
+
+A **liquidity incentive** is another method protocols can use to attract liquidity provision. This incentive is distributed directly to liquidity providers and is a great way to bootstrap new liquidity on the platform.
+
+| **Voter Incentives** | **Liquidity Incentives** |
+|------------------|----------------------|
+| Paid as lump sum at epoch start | Distributed over 7 days after epoch |
+| Designated during current epoch | Used to boost pool visibility **(direct yield)** |
+| Influences votes until epoch rollover | Helps bootstrap new tokens |
+| **Distribution** | **Distribution** |
+| To voters at epoch flip | To LPs for full week after epoch |
+
+**Be in the know!**
+
+A vote incentive can be in the form of any whitelisted token, and must be applied to only active gauges. Be sure to read & understand voting before participating.
+
+## Fees
+
+Swyrl's s33 model takes a straightforward approach to fee distribution:
+
+- **100% xSWYRL holders** - All protocol fees flow to participants, incentivizing long-term alignment!
+
+This creates a **flywheel** where:
+
+1. High-performing pairs generate more fees
+2. xSWYRL stakers are more incentivized to vote
+3. Increased emissions attract deeper liquidity
+4. Deeper liquidity drives more volume and fees
+
+**Speaking of swap fees!**
+
+Fees are dynamically adjusted algorithmically based on market volatility and trading volume.
+
+### Fee-Split
+
+Fees-splits can be configured per gauge, below are the default fee-splits for all liquidity types:
+
+| With Gauge | No Gauge |
+|------------|----------|
+| **100%** to xSWYRL<br/>**0%** to Liquidity Providers<br/>**0%** to Protocol | **0%** to xSWYRL<br/>**95%** to Liquidity Providers<br/>**5%** to Protocol |
+
+**Configurable Ratios**
+
+Just like how our fees adjust to market volatility and volume, giving high-volume liquidity their fees back is just good business.
+
+**Example memecoin fee-split:**
+
+- 80% of fees go to xSWYRL
+- 15% creator fee **(only memecoin launchers)**
+- 5% goes to LP
+
+### Dynamic Fees
+
+![Placeholder]()
+
+Swyrl's algorithm automatically adjusts fees based on market conditions and trading volume.
+
+While dynamic fee mechanisms are not entirely novel—**Swyrl's dynamic fee algorithm monitors both DEX and CEX volume inflow.** This leads to better performance, especially during volatile periods.
+
+| Fee Range | Market Conditions |
+|-----------|-------------------|
+| Base: **0.05%** Cap: **1.00%** | Normal market conditions, Stable trading pairs, High liquidity pools |
+| Base: **0.30%** Cap: **2.00%** | Less liquid pairs, Higher volatility, Complex trading pairs |
+| Up to **5.00%** | Extreme market conditions, Flash crash protection, MEV resistance |
+
+**Below is a visual of Swyrl's dynamic fees versus Uni-V3:**
+
+![Placeholder]()

@@ -1,2 +1,217 @@
-# xSWYRL
+# What is xSWYRL?
 
+> 📷 Image placeholder
+
+xSWYRL is a token developed by the Swyrl team to address the sustainability challenge associated with earlier metaDEX models. xSWYRL combines the best of vote-escrow models with the flexibility of traditional escrow incentive systems.
+
+**No more lengthy lock-ups to participate fairly in an ecosystem.**
+
+---
+
+### What can I do with xSWYRL?
+
+xSWYRL stakers can vote to direct emissions to their favorite LP pairs. By staking, they earn **100% of protocol fees, vote incentives, and penalties from exits.**
+
+| Incentives | Voting | Rebases |
+|------------|--------|---------|
+| Earn 100% of protocol fees and vote incentives | Direct emissions to liquidity pools | Receive penalties from exits |
+
+---
+
+> 📷 Image placeholder
+
+---
+
+## **Token**
+
+xSWYRL is a non-transferable representation of **1 unit of SWYRL held in escrow** within the xSWYRL smart contract. Only holders of xSWYRL have voting rights on Swyrl. While xSWYRL itself is **non-transferable**, it offers users the ability to exit their position when needed.
+
+---
+
+### How is xSWYRL obtained?
+
+Users can acquire xSWYRL through vote incentives, token emissions, or by converting SWYRL.
+
+> 📷 Image placeholder
+
+### **SWYRL > xSWYRL conversion**
+
+SWYRL can be freely converted into xSWYRL at any time. **The process is instant, and the ratio is 1:1.**
+
+---
+
+### How to exit xSWYRL?
+
+> 📷 Image placeholder
+
+### **xSWYRL > SWYRL redemption**
+
+Users can exit their xSWYRL position in three ways:
+
+1. **Direct redemption**: Convert xSWYRL back to SWYRL instantly with a **50% penalty** (1:0.5 ratio)
+2. **Vesting redemption**: User-selected vesting period (0-180 days) with proportional penalties - **longer vesting = more favorable ratio**
+3. **Liquid staking exit**: Use S33, the liquid staked version of xSWYRL, to trade your position on the open market
+
+<div class="warning-box">
+**Warning**
+
+Instant exit means **forfeiting 50% of the underlying SWYRL.**
+</div>
+
+---
+
+### Vesting Penalty
+
+> 📷 Image placeholder
+
+Users can convert xSWYRL to SWYRL at any time: instantly **(with a 50% penalty)** or with a user-selected vesting period, that influences the conversion ratio. The **longer the vesting, the more favorable the ratio.**
+
+1. An immediate conversion incurs a **50%** penalty, offering a **1:0.5** ratio
+2. Partial vesting periods offer **proportional ratios** (e.g., 3 months = **1:0.73** ratio)
+3. Opting for a full **6-month** vesting period results in a **1:1** ratio, eliminating any penalty
+
+- Minimum Vesting Length (Cancellation Period): **15 days** (`86400s * 15`)
+- Maximum Vesting Length (100% Exit): **180 days** (`86400s * 180`)
+
+Vesting can be cancelled only during the initial **14 day** vesting period. xSWYRL is returned to a user upon cancellation of vesting. Once the **14 day** cancellation period has elapsed, the vesting becomes permanent and the user can withdraw liquid SWYRL tokens subject to the penalty applicable to them at that time. Upon completion of the **maximum 180 day** vesting length a user receives all their underlying SWYRL tokens on a **1:1** basis.
+
+<div class="warning-box">
+**Important**
+
+Users who begin vesting their xSWYRL **cannot vote or claim rebases.**
+</div>
+
+---
+
+## Exit Rebase
+
+Swyrl incorporates a unique **zero-sum** take on the traditional metaDEX anti-dilution (rebase) model which is designed to both protect xSWYRL holders from dilution and to incentivize them to maintain their positions and participate in the continued success of Swyrl.
+
+**100%** of xSWYRL tokens that are forfeited to instant exiting xSWYRL is streamed to xSWYRL stakers and can be claimed in proportion to their positions after epoch flip, serving as **dilution protection (rebase)** and an **additional incentive.**
+
+This rebase mechanism not only discourages premature exits but also ensures that the remaining participants are rewarded for loyalty and active participation.
+
+### Why?
+
+As discussed in the Origins of metaDEX, metaDEX introduced important improvements to user alignment but still had fundamental limitations. xSWYRL builds on these improvements while addressing the core issues, moving the power balance back towards users. Instead:
+
+- Stakers who remain in xSWYRL longer earn more fees, vote incentives, and exit penalties.
+  - Users can exit their position at any time, ensuring rewards flow to those who value it the most.
+
+Exit penalties create a **"survival of the fittest"** where less committed capital exits and active stakers earn increased rewards, attracting more users. **Any size can exit**, unlike liquid wrappers **(limited liquidity)** or veNFTs that are large to sell **(pseudo-liquid)**.
+
+---
+
+## Voting Incentives
+
+xSWYRL holders are rewarded for actively participating and voting—**earning 100% of protocol fees and vote incentives.** When you vote for liquidity with gauges, you receive a proportionate share of all fees generated by that liquidity, plus any additional vote incentives offered by protocols to attract emissions.
+
+| **Trading Fees** | **Vote Incentives** |
+|------------------|---------------------|
+| **100%** of trading fees on liquidity you vote for | Additional rewards offered by protocols to attract votes to their pairs |
+
+<div class="info-box">
+**Claiming Rewards**
+
+- Both fees and vote incentives are claimable immediately after Epoch flip.
+- Vote incentives can be in any whitelisted token, learn more.
+</div>
+
+---
+
+### Voting Breakdown
+
+The main purpose of the xSWYRL token is to vote to direct emissions to liquidity. This is achieved through weekly voting for gauged liquidity. Emissions are distributed proportionally to the total percentage of votes in the Epoch.
+
+### Emission Calculation
+
+The expected emissions can be calculated using a simple division formula:
+
+```
+emissions(PAIR) = (% of total votes) / 100%
+```
+
+For example, **100,000 SWYRL** is distributed in a single epoch. If **10%** of all votes are allocated to the **SWYRL / USDC** pair, that pair will receive **10,000 SWYRL** tokens distributed linearly to liquidity providers of the relevant LP pair throughout the epoch.
+
+### Vote Weight Calculation
+
+The voting power of xSWYRL is determined by:
+
+1. Amount of xSWYRL held
+2. Active participation in voting
+
+```
+Vote Weight = xSWYRL Balance × Participation Multiplier
+```
+
+<div class="info-box">
+**Weekly Epochs**
+
+- Epochs reset every Thursday at **00:00 UTC**
+- Votes determine emission distribution for the following week
+- Emissions are distributed linearly throughout the epoch
+</div>
+
+---
+
+## Active Staking
+
+Active staking is a key improvement in xSWYRL's design over traditional metaDEX systems. While other protocols automatically distribute rebases to all holders, xSWYRL **requires users to be staked to earn vote incentives and rebases.**
+
+### Requirements
+
+To be eligible for ALL weekly rewards, xSWYRL holders must:
+
+- Have xSWYRL staked
+- Cast votes during that epoch
+
+<div class="warning-box">
+**Stake before Epoch Flip**
+
+If you do not stake xSWYRL before the epoch flip you **will not receive any rewards for that epoch.**
+</div>
+
+This design choice ensures incentives flow to active participants who are staked and vote every epoch, rather than having passive holders accumulate rewards without contributing.
+
+---
+
+## Liquid Staking
+
+Swyrl was designed to eliminate friction from the metaDEX model, and managing voting positions is one of the biggest sources of this friction. The liquid staked version of xSWYRL simplifies this process by **automating voting and reward claims** without disrupting xSWYRL's core mechanics.
+
+<div class="warning-box">
+**Minting Lock**
+
+Before each epoch flip, there is a **1-hour period** where liquid staking tokens cannot be minted so votes can be calculated.
+</div>
+
+### S33
+
+> 📷 Image placeholder
+
+**S33** is the liquid staked version of xSWYRL and can be minted with xSWYRL. The **S33:xSWYRL ratio** starts at 1.00:1.00 and increases in **S33's** favor as rewards accrue from fees, vote incentives and rebases.
+
+| Feature | Benefit |
+|---------|---------|
+| **Automated Voting** | Voting algorithm for mathematically perfect voting |
+| **SWYRL Buybacks** | Sells rewards for SWYRL using aggregators for optimal execution |
+| **Auto-compounding** | All vote incentives and fees increase the **S33:xSWYRL ratio** |
+| **Claims Rebase** | Claims rebase and which also increases the **S33:xSWYRL ratio** |
+| **Zero Fees** | No costs for deposits, withdrawals, or compounding |
+| **Full Liquidity** | Trade freely on open market unlike staked xSWYRL positions |
+| **Price Protection** | Cannot trade below xSWYRL redemption value **(instant exit)** |
+| **S33.ratio() ⬆️** | **S33:xSWYRL** ratio always increases from rewards |
+
+After every weekly epoch flip rewards from fees and vote incentives are automatically sold to increase the **S33:xSWYRL ratio**, this increase includes rebases from user exits. Below is an example showing how **S33:xSWYRL ratio** will increase over time.
+
+> 📷 Image placeholder
+
+#### Does not bypass exit fee
+
+While **S33** offers instant liquidity, it doesn't circumvent xSWYRL's exit penalties. As the liquid staking version of xSWYRL, **S33's** market price naturally reflects the instant exit fee structure. The token cannot trade below the xSWYRL redemption value because arbitrageurs would immediately buy and redeem **S33** for xSWYRL to capture the difference. While **S33** cannot trade below the xSWYRL instant exit penalty, it may trade at a premium to this based on market dynamics.
+
+<div class="warning-box">
+**TWAP Buyback Period**
+
+After each epoch flip while rewards are being sold and compounded, there is a **24-hour TWAP buyback period** during which new S33 cannot be minted from xSWYRL. **Withdrawals are not affected**, you can still withdraw your xSWYRL during this period.
+</div>

@@ -1,2 +1,59 @@
 # Legacy Liquidity
 
+Prior to concentrated liquidity, **Uniswap v2** pairs were the standard for DeFi liquidity. Swyrl implements these traditional pairs alongside stable pairs for correlated assets.
+
+---
+
+## Swaps
+
+On Swyrl, users can swap tokens for other tokens. Each trade's exchange rate and slippage is determined by the total value of the liquidity pair and the current pair balance, whose price arbitrage bots help maintain.
+
+### Pair Types
+
+**Swyrl features two types of Liquidity Pairs, each with its own swap curve:**
+
+- **Volatile (Uni V2)**: This is the most common type of pair where tokens are paired with equal weights in terms of dollar value.
+
+  ```
+  x × y = k
+  ```
+
+- **Stable (Correlated)**: These pairs use an optimized curve designed specifically for correlated assets like stablecoins. The curve features a modified invariant that allows for highly efficient swaps with minimal slippage between tokens of similar value.
+
+  ```
+  xy(x² + y²) = k
+  ```
+
+### Swap Curves
+
+#### Visualization
+
+To provide a graphical representation of the swap curves, the graph below illustrates the variance between `0` and `100`. It demonstrates that the **Blue** (Correlated) curve exhibits less slippage from the mean as `k` fluctuates.
+
+> 📷 Image placeholder
+
+**Blue** (#0052FF) = Correlated Curve, **Black** = Volatile Swap Curve
+
+### Fee Structure
+
+<div class="info-box">
+**Speaking of swap fees!**
+
+Fees are adjustable if required, and typically range from:
+
+- Volatile **(0.2-2%)**
+- Correlated **(0.001%-0.03%)**
+- Native **(1%-3%)**.
+
+The theoretical **MIN** and **MAX** for legacy fees is **(0.01 &lt;= Fee &lt;= 5000bps)**. This means the minimum fee is **0.0001%**, and the highest is **50.00%**.
+</div>
+
+---
+
+## Pairs
+
+In the s33 model, liquidity providers stake their LP tokens in a gauge to earn emissions from Swyrl. Swyrl encourages liquidity provision with incentives. The more votes allocated to a liquidity pair by xSWYRL voters, the more SWYRL that will be emitted to the gauge in the following epoch.
+
+### Rewards & Incentives
+
+Legacy pairs can be staked to earn emissions and liquidity incentives. Once you have the LP tokens, you can deposit them within their corresponding gauge (if the pair is whitelisted), and start earning rewards in real-time! If the pair does not have a gauge, **swap fees are directly auto-compounded directly into the pair.**
