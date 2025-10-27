@@ -1,12 +1,8 @@
 # Concentrated Liquidity
 
----
-
 ## What is it?
 
 First pioneered by **Uniswap V3**, concentrated liquidity enables liquidity providers to focus their capital within specific [ranges](#swyrl-cl), dramatically improving spread and slippage.
-
----
 
 ### Order Book
 
@@ -15,8 +11,6 @@ To get an idea of what Concentrated Liquidity offers we can compare it to a more
 > 📷 Image placeholder
 
 In the depth chart above, **bid (buys)** and **asks (sells)** are clearly shown, and the depth at which a market order would impact the median price is visually discernible.
-
----
 
 ### Swyrl CL
 
@@ -34,8 +28,6 @@ The **shaded area** represents the liquidity depth summed between all ticks with
 
 The **horizontal markers** represent the **range** of the position. In the context of automated market makers (AMMs), the concept of a **"range"** refers to an interval between two ticks of any distance. The marker also displays number of ticks within the range.
 
----
-
 ### Example
 
 Let's explore how much better concentrated liquidity is for users, using: **Alice and Bob.**
@@ -50,8 +42,6 @@ Both Alice and Bob want to provide liquidity to a **MON / USDC** pool, with **MO
 | If **MON / USDC** trades within range:<ul><li>Both earn the same amount of rewards</li><li>Bob achieves this with just **18.35%** of Alice's capital</li><li>Bob's remaining capital is free for other investments or hedging</li></ul> | If **MON / USDC** price drops significantly:<ul><li>Alice risks her entire **$1,000,000** investment</li><li>Bob's maximum loss is limited to **$159,000**</li><li>Bob maintains flexibility with his remaining **$816,500**</li></ul> |
 
 This example demonstrates why concentrated liquidity is effective - it achieves the **same effective liquidity with significantly less capital at risk**, while providing better pricing and lower slippage for traders.
-
----
 
 ## Competitive Farming
 
@@ -70,8 +60,6 @@ As trading volume grows, pools generate more rewards, which are distributed as r
 Concentrated Liquidity outpaces Uniswap V2 liquidity **80-100x in terms of price execution,** which leads to **fees also increasing 80-100x**. However the tighter a position, the more impermanent loss occurs. The goal for any user is to adjust positions consistently and often enough that the rewards outpace the risk. On Monad, position management is significantly more efficient and responsive.
 
 **Your efforts on Swyrl are rewarded in full**—the tighter your ranges, the more active your liquidity, the higher your earnings!
-
----
 
 ## Range Orders
 
@@ -92,8 +80,6 @@ Unlike some markets where limit orders may incur fees, the range order maker gen
 The current price of the **MON / USDC** pool is **$14.50**. You would like to sell your **MON** for **USDC** when the price of **MON** reaches **$16.0**. This is possible, as the price space above the spot price is denominated in the higher valued asset, **MON**. You can provide **MON** at **$16.0-$16.01** and have the order filled when the spot price crosses your position.
 
 > 📷 Image placeholder
-
----
 
 ### Buy Limit Order
 
@@ -120,8 +106,6 @@ Unlike traditional limit orders, range orders will be unfilled if the spot price
 
 When setting range orders, consider your concentration approach carefully. A wider range may generate more rewards during price fluctuations within your range, but increases the risk of having your order unfilled if the price reverses before completing your full range.
 </div>
-
----
 
 ## Fee Tiers
 

@@ -4,8 +4,6 @@
 
 Swyrl integrates generalized execution abstraction protocols to redistribute MEV value back to protocol participants, ensuring there is no value leak to outside extractors, bringing capital efficiency to the next level.
 
----
-
 ## Understanding MEV in DeFi
 
 **MEV (Maximal Extractable Value)** refers to the additional profit that can be extracted by reordering, inserting, or censoring transactions within a block.  
@@ -17,9 +15,6 @@ In traditional AMMs, external actors such as searchers and block builders often 
 
 These practices **reduce user returns** and **increase slippage**, effectively siphoning value out of the ecosystem.
 
----
-
-
 ## MEV Solutions
 
 Swyrl embedded Fastlane’s Atlas Router into its trading interface, allowing users to toggle and execute MEV-protected trades. 
@@ -28,8 +23,6 @@ This integration ensures transactions are routed in a way that minimizes the ris
 
 ![image](/mev-swyrl.png)
 
----
-
 ## Technical Flow
 
 1. User initiates a swap on the Swyrl DEX interface.  
@@ -37,8 +30,6 @@ This integration ensures transactions are routed in a way that minimizes the ris
 3. It selects the optimal route that maximizes user outcome while preventing MEV exploitation.  
 4. The trade is bundled and broadcasted through a protected relay to prevent transaction reordering.  
 5. Execution results in secured pricing and a net MEV redistribution inside Swyrl.
-
----
 
 ## Future Extensions
 
