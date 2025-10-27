@@ -1,6 +1,9 @@
+import VestingPenaltyChart from '../../components/VestingPenaltyChart'
+import S33RatioChart from '../../components/S33RatioChart'
+
 # What is xSWYRL?
 
-> 📷 Image placeholder
+![Swyrl Banner](/banner.png)
 
 xSWYRL is a token developed by the Swyrl team to address the sustainability challenge associated with earlier metaDEX models. xSWYRL combines the best of vote-escrow models with the flexibility of traditional escrow incentive systems.
 
@@ -18,7 +21,7 @@ xSWYRL stakers can vote to direct emissions to their favorite LP pairs. By staki
 
 ---
 
-> 📷 Image placeholder
+![Swyrl Flywheel](/swyrl-fly-wheel.png)
 
 ---
 
@@ -32,7 +35,7 @@ xSWYRL is a non-transferable representation of **1 unit of SWYRL held in escrow*
 
 Users can acquire xSWYRL through vote incentives, token emissions, or by converting SWYRL.
 
-> 📷 Image placeholder
+![Convert to xSWYRL](/convert.png)
 
 ### **SWYRL > xSWYRL conversion**
 
@@ -42,7 +45,7 @@ SWYRL can be freely converted into xSWYRL at any time. **The process is instant,
 
 ### How to exit xSWYRL?
 
-> 📷 Image placeholder
+![Exit xSWYRL](/exit.png)
 
 ### **xSWYRL > SWYRL redemption**
 
@@ -50,7 +53,7 @@ Users can exit their xSWYRL position in three ways:
 
 1. **Direct redemption**: Convert xSWYRL back to SWYRL instantly with a **50% penalty** (1:0.5 ratio)
 2. **Vesting redemption**: User-selected vesting period (0-180 days) with proportional penalties - **longer vesting = more favorable ratio**
-3. **Liquid staking exit**: Use S33, the liquid staked version of xSWYRL, to trade your position on the open market
+3. **Liquid staking exit**: Use s33, the liquid staked version of xSWYRL, to trade your position on the open market
 
 <div class="warning-box">
 **Warning**
@@ -62,7 +65,7 @@ Instant exit means **forfeiting 50% of the underlying SWYRL.**
 
 ### Vesting Penalty
 
-> 📷 Image placeholder
+<VestingPenaltyChart />
 
 Users can convert xSWYRL to SWYRL at any time: instantly **(with a 50% penalty)** or with a user-selected vesting period, that influences the conversion ratio. The **longer the vesting, the more favorable the ratio.**
 
@@ -185,33 +188,31 @@ Swyrl was designed to eliminate friction from the metaDEX model, and managing vo
 Before each epoch flip, there is a **1-hour period** where liquid staking tokens cannot be minted so votes can be calculated.
 </div>
 
-### S33
+### s33
 
-> 📷 Image placeholder
-
-**S33** is the liquid staked version of xSWYRL and can be minted with xSWYRL. The **S33:xSWYRL ratio** starts at 1.00:1.00 and increases in **S33's** favor as rewards accrue from fees, vote incentives and rebases.
+**s33** is the liquid staked version of xSWYRL and can be minted with xSWYRL. The **s33:xSWYRL ratio** starts at 1.00:1.00 and increases in **s33's** favor as rewards accrue from fees, vote incentives and rebases.
 
 | Feature | Benefit |
 |---------|---------|
 | **Automated Voting** | Voting algorithm for mathematically perfect voting |
 | **SWYRL Buybacks** | Sells rewards for SWYRL using aggregators for optimal execution |
-| **Auto-compounding** | All vote incentives and fees increase the **S33:xSWYRL ratio** |
-| **Claims Rebase** | Claims rebase and which also increases the **S33:xSWYRL ratio** |
+| **Auto-compounding** | All vote incentives and fees increase the **s33:xSWYRL ratio** |
+| **Claims Rebase** | Claims rebase and which also increases the **s33:xSWYRL ratio** |
 | **Zero Fees** | No costs for deposits, withdrawals, or compounding |
 | **Full Liquidity** | Trade freely on open market unlike staked xSWYRL positions |
 | **Price Protection** | Cannot trade below xSWYRL redemption value **(instant exit)** |
-| **S33.ratio() ⬆️** | **S33:xSWYRL** ratio always increases from rewards |
+| **s33.ratio() ⬆️** | **s33:xSWYRL** ratio always increases from rewards |
 
-After every weekly epoch flip rewards from fees and vote incentives are automatically sold to increase the **S33:xSWYRL ratio**, this increase includes rebases from user exits. Below is an example showing how **S33:xSWYRL ratio** will increase over time.
+After every weekly epoch flip rewards from fees and vote incentives are automatically sold to increase the **s33:xSWYRL ratio**, this increase includes rebases from user exits. Below is an example showing how **s33:xSWYRL ratio** will increase over time.
 
-> 📷 Image placeholder
+<S33RatioChart />
 
-#### Does not bypass exit fee
+Does not bypass exit fee
 
-While **S33** offers instant liquidity, it doesn't circumvent xSWYRL's exit penalties. As the liquid staking version of xSWYRL, **S33's** market price naturally reflects the instant exit fee structure. The token cannot trade below the xSWYRL redemption value because arbitrageurs would immediately buy and redeem **S33** for xSWYRL to capture the difference. While **S33** cannot trade below the xSWYRL instant exit penalty, it may trade at a premium to this based on market dynamics.
+While **s33** offers instant liquidity, it doesn't circumvent xSWYRL's exit penalties. As the liquid staking version of xSWYRL, **s33's** market price naturally reflects the instant exit fee structure. The token cannot trade below the xSWYRL redemption value because arbitrageurs would immediately buy and redeem **s33** for xSWYRL to capture the difference. While **s33** cannot trade below the xSWYRL instant exit penalty, it may trade at a premium to this based on market dynamics.
 
 <div class="warning-box">
 **TWAP Buyback Period**
 
-After each epoch flip while rewards are being sold and compounded, there is a **24-hour TWAP buyback period** during which new S33 cannot be minted from xSWYRL. **Withdrawals are not affected**, you can still withdraw your xSWYRL during this period.
+After each epoch flip while rewards are being sold and compounded, there is a **24-hour TWAP buyback period** during which new s33 cannot be minted from xSWYRL. **Withdrawals are not affected**, you can still withdraw your xSWYRL during this period.
 </div>
