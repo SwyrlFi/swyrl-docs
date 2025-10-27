@@ -2,91 +2,49 @@
 
 ## Overview
 
-A set of advanced permissioned engines that capture and redistribute MEV value back to protocol participants, ensuring there is no value leak to outside extractors, bringing capital efficiency to the next level.
+Swyrl integrates generalized execution abstraction protocols to redistribute MEV value back to protocol participants, ensuring there is no value leak to outside extractors, bringing capital efficiency to the next level.
 
 ---
+
+## Understanding MEV in DeFi
+
+**MEV (Maximal Extractable Value)** refers to the additional profit that can be extracted by reordering, inserting, or censoring transactions within a block.  
+In traditional AMMs, external actors such as searchers and block builders often capture this value through techniques like:
+
+- **Sandwich Attacks:** Surrounding user transactions to profit from predictable price movement.  
+- **Frontrunning:** Inserting transactions before high-impact trades to profit from slippage.  
+- **Backrunning:** Executing immediately after large swaps to capture post-trade arbitrage.
+
+These practices **reduce user returns** and **increase slippage**, effectively siphoning value out of the ecosystem.
+
+---
+
 
 ## MEV Solutions
 
-| Solution | Status | Description |
-|----------|--------|-------------|
-| s33 AMO | **COMING SOON** | Arbitrages the redeem floor and gives back to voters ensuring all value is kept inside the protocol instead of going to outside arbitragers. |
-| Backrun Arbitrage | **COMING SOON** | Frontruns every arbitrage and returns value to users, protecting LPers from LVR and adverse costs from toxic MEV bots. |
+Swyrl embedded Fastlane’s Atlas Router into its trading interface, allowing users to toggle and execute MEV-protected trades. 
+
+This integration ensures transactions are routed in a way that minimizes the risk of frontrunning, sandwich attacks, and other forms of value extraction, securing better execution and protecting user capital.
+
+![image](/mev-swyrl.png)
 
 ---
 
-## Automated Market Operations (AMO)
+## Technical Flow
 
-Swyrl's AMO system is designed to optimize protocol efficiency and maximize value for all participants through systematic arbitrage when the s33 redeem floor triggers.
-
-| Performance | Distribution |
-|-------------|--------------|
-| **$0** captured so far | **100% of proceeds distributed to voters** |
-
-The AMO system executes a systematic arbitrage process:
-
-1. Target liquidity pool identification
-2. Fee privilege utilization for optimal execution
-3. SWYRL → s33 conversion
-4. s33 → xSWYRL redemption
-5. Instant exit: xSWYRL → SWYRL
-6. Profit distribution to s33
-
-| Revenue Stream | Allocation |
-|----------------|------------|
-| Instant Exit Proceeds | 50% → Voter rebase |
-| Arbitrage Earnings | 100% → s33 compounding |
-
-Market inefficiencies are captured by the AMO bot, ensuring value stays within SWYRL through systematic arbitrage and optimal execution.
-
-<div class="warning-box">
-**Security Framework**
-
-- MEV executor authorization required (permissioned)
-- Atomic transaction execution
-- Complete on-chain verification
-</div>
+1. User initiates a swap on the Swyrl DEX interface.  
+2. The Atlas Router evaluates multiple route candidates using off-chain simulation.  
+3. It selects the optimal route that maximizes user outcome while preventing MEV exploitation.  
+4. The trade is bundled and broadcasted through a protected relay to prevent transaction reordering.  
+5. Execution results in secured pricing and a net MEV redistribution inside Swyrl.
 
 ---
 
-## Stopping Exploitative Liquidity on Swyrl
+## Future Extensions
 
-### What Is Exploitative Liquidity?
+Swyrl’s MEV Module is designed with modular extensibility, paving the way for:
 
-Some liquidity providers (LPs) exploit decentralized exchanges (DEXs) by adding **tight, one-tick liquidity positions** to maximize token rewards, which are streamed per second to in-range liquidity. Using mempool access, they withdraw liquidity when a large swap is detected, avoiding **impermanent loss** while claiming rewards without supporting trades.
+- **Multi-Router Integration:** Expanding beyond the current Atlas Router by integrating additional MEV-aware routing protocols to optimize execution paths across diverse liquidity and infrastructure providers.
+- **Native Mempool Integration:** Establishing direct, low-latency access to Monad’s mempool for real-time orderflow visibility, enabling proactive mitigation of frontrunning and sandwich risks.
 
-#### How It Works
-
-- **Tight Position**: LPs add liquidity in a narrow, one-tick range to earn maximum rewards per unit of capital.
-- **Mempool Watch**: They monitor the mempool for incoming swaps that could shift prices and cause losses.
-- **Quick Exit**: Before the swap hits, they remove liquidity, dodging impermanent loss.
-- **Reward Grab**: They still collect rewards for the brief time their liquidity was active.
-
-This undermines genuine LPs who maintain stable liquidity and bear market risks.
-
----
-
-### Why DEXs Are Vulnerable
-
-DEXs often fall prey to this exploit because:
-
-- **Instant Reward Streaming**: Rewards are paid per second and don't have proper mechanisms which require sustained liquidity.
-- **No Holding Period**: LPs can withdraw instantly, avoiding losses from swaps.
-
-Swyrl tackles these issues head-on with targeted solutions.
-
----
-
-### Swyrl's Solutions
-
-| Solution | Status | Description |
-|----------|--------|-------------|
-| Abuse Prevention Module | **COMING SOON** | Using quantitive subgraph data and external monitoring, the protocol utilizes this module to prevent abuse from unproductive liquidity. |
-| Delayed Rewards | **COMING SOON** | Requires LPs to hold liquidity for a minimum time before claiming rewards. |
-| Fee Growth Tracking | **COMING SOON** | Links rewards to swap fees earned, rewarding actual trading support. |
-
----
-
-### Conclusion
-
-Swyrl's innovative solutions stop exploitative one-tick liquidity strategies. By rewarding only LPs who provide sustained, trade-supporting liquidity, Swyrl ensures a fair and stable DEX for all users.
+As Monad’s execution environment matures, Swyrl will continuously enhance its routing layer, combining multiple protection systems and native mempool intelligence to deliver the most efficient, transparent, and aligned trading experience on the network.
