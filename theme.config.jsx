@@ -1,5 +1,16 @@
 import { useConfig } from 'nextra-theme-docs'
 
+const WebsiteLink = () => (
+  <a
+    href="https://swyrl.finance/"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="website-link _inline-flex _items-center _justify-center _rounded-full _px-3 _py-1.5 _text-sm _font-medium _text-gray-700 _transition hover:_opacity-80 dark:_text-gray-300"
+  >
+    Website
+  </a>
+)
+
 export default {
   logo: (
     <>
@@ -31,12 +42,16 @@ export default {
   search: {
     placeholder: 'Search documentation...'
   },
+  navbar: {
+    extraContent: <WebsiteLink />
+  },
   head: function Head() {
     const { title } = useConfig()
     return (
       <>
-        <title>{title ? `${title} | Docs` : 'Swyrl Protocol Docs'}</title>
+        <title>{title ? `${title} | Swyrl Docs` : 'Swyrl Protocol Docs'}</title>
         <meta name="description" content="Swyrl Protocol Documentation" />
+        <link rel="icon" href="/favicon.ico" sizes="any" />
       </>
     )
   },

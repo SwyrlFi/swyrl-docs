@@ -36,3 +36,20 @@ html.dark footer a {
 html.dark footer a:hover {
   color: hsl(var(--nextra-primary-hue), 60%, 70%) !important;
 }
+
+/* Header Website link positioning */
+.nextra-nav-container nav > .website-link {
+  order: 2;
+}
+
+.nextra-nav-container nav > *:has(input[placeholder="Search documentation..."]) {
+  order: 3;
+}
+
+.nextra-nav-container nav > a[href="https://x.com/SwyrlFi"] {
+  order: 4;
+}
+
+.nextra-nav-container nav > a[href="https://discord.com/invite/Swyrl"] {
+  order: 5;
+}
