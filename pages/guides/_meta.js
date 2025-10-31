@@ -1,5 +1,5 @@
 export default {
-  'intro-to-defi': 'Intro to DeFi',
-  'onboarding': 'Onboarding',
-  'user-guides': 'User Guides'
+  'swapping': 'Connect and Swap',
+  'farming': 'Add Liquidity and Farming',
+  'voting': 'Stake and Vote'
 }

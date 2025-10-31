@@ -1,3 +1,5 @@
+import { Callout } from 'nextra/components'
+
 # Concentrated Liquidity
 
 ## What is it?
@@ -8,7 +10,7 @@ First pioneered by **Uniswap V3**, concentrated liquidity enables liquidity prov
 
 To get an idea of what Concentrated Liquidity offers we can compare it to a more centralized, and well-known, liquidity scheme: **an Order Book**.
 
-> 📷 Image placeholder
+![orderbook](/orderbook.png)
 
 In the depth chart above, **bid (buys)** and **asks (sells)** are clearly shown, and the depth at which a market order would impact the median price is visually discernible.
 
@@ -20,9 +22,9 @@ In a **Uni V2** liquidity pair, liquidity positions are spread across a range fr
 
 Liquidity spread from `0 to ∞` is exponentially less efficient than, say, one with a defined range of **$13.0-$16.0**. By focusing liquidity in a narrower range, concentrated liquidity pools can improve slippage, as more liquidity is available to support trades at desired prices, **reducing the price impact of transactions.**
 
-> 📷 Image placeholder
+![swyrl-cl](/swyrl-cl.png)
 
-The **yellow line** represents the **7 day historical price range** of the pool. This historical context helps liquidity providers visualize price volatility before selecting their position ranges.
+The **purple line** represents the **7 day historical price range** of the pool. This historical context helps liquidity providers visualize price volatility before selecting their position ranges.
 
 The **shaded area** represents the liquidity depth summed between all ticks within the liquidity pool (within the same fee-tier, more on this [here](#fee-tiers)).
 
@@ -31,8 +33,6 @@ The **horizontal markers** represent the **range** of the position. In the conte
 ### Example
 
 Let's explore how much better concentrated liquidity is for users, using: **Alice and Bob.**
-
-> 📷 Image placeholder
 
 Both Alice and Bob want to provide liquidity to a **MON / USDC** pool, with **MON** currently priced at **$14.50.** Each has **$1,000,000** to invest, but they take different approaches:
 
@@ -53,7 +53,7 @@ The more optimized a user's range is, the higher rewards they earn. This natural
 
 As trading volume grows, pools generate more rewards, which are distributed as real-yield to xSWYRL stakers.
 
-> 📷 Image placeholder
+![comp-farming](/comp-farming.png)
 
 ### How does this differ from other models?
 
@@ -67,11 +67,9 @@ In orderbooks, anyone can easily set a **limit order** to buy or sell an asset a
 
 With concentrated liquidity, **you can approximate a limit order by providing a single asset as liquidity within a specific range.** Like traditional limit orders, range orders are set with the expectation they will execute at some point in the future, with the target asset available for withdrawal after the spot price has crossed the full range of the order.
 
-<div class="info-box">
-**Important**
-
-Unlike some markets where limit orders may incur fees, the range order maker generates rewards while the order is filled. This is due to the range order technically being a form of liquidity provisioning rather than a typical swap.
-</div>
+<Callout type="info">
+**Important**: Unlike some markets where limit orders may incur fees, the range order maker generates rewards while the order is filled. This is due to the range order technically being a form of liquidity provisioning rather than a typical swap.
+</Callout>
 
 ### Take-Profit Order
 
@@ -79,7 +77,7 @@ Unlike some markets where limit orders may incur fees, the range order maker gen
 
 The current price of the **MON / USDC** pool is **$14.50**. You would like to sell your **MON** for **USDC** when the price of **MON** reaches **$16.0**. This is possible, as the price space above the spot price is denominated in the higher valued asset, **MON**. You can provide **MON** at **$16.0-$16.01** and have the order filled when the spot price crosses your position.
 
-> 📷 Image placeholder
+![sell-order](/sell-order.png)
 
 ### Buy Limit Order
 
@@ -87,13 +85,11 @@ The current price of the **MON / USDC** pool is **$14.50**. You would like to se
 
 The current price of a **MON / USDC** pool is **$14.50** again. You expect **MON** to rebound if it ever drops to **$13.0**. So you decide to provide **USDC** at **$13.0-$13.01** and have the order filled if the spot price falls below your position at **$13.0-$13.01**.
 
-> 📷 Image placeholder
+![buy-order](/buy-order.png)
 
-<div class="warning-box">
-**Caution**
-
-Unlike traditional limit orders, range orders will be unfilled if the spot price crosses the given range and then reverses in the opposite direction before the target asset is withdrawn. While you will be earning LP rewards during this time, if the goal is to exit fully in the desired destination asset, **you will need a tight range.**
-</div>
+<Callout type="info">
+**Caution**: Unlike traditional limit orders, range orders will be unfilled if the spot price crosses the given range and then reverses in the opposite direction before the target asset is withdrawn. While you will be earning LP rewards during this time, if the goal is to exit fully in the desired destination asset, **you will need a tight range.**
+</Callout>
 
 #### Impossible Range Order Types
 
@@ -101,11 +97,9 @@ Unlike traditional limit orders, range orders will be unfilled if the spot price
 |---------------------|----------------------|
 | Cannot place **USDC** orders above current price | Cannot place **MON** orders below current price |
 
-<div class="info-box">
-**Pro Tip**
-
-When setting range orders, consider your concentration approach carefully. A wider range may generate more rewards during price fluctuations within your range, but increases the risk of having your order unfilled if the price reverses before completing your full range.
-</div>
+<Callout type="info">
+**Pro Tip**: When setting range orders, consider your concentration approach carefully. A wider range may generate more rewards during price fluctuations within your range, but increases the risk of having your order unfilled if the price reverses before completing your full range.
+</Callout>
 
 ## Fee Tiers
 
@@ -126,8 +120,6 @@ By default, swap fees are distributed according to the following global configur
 
 - **100%** - Distributed to xSWYRL voters (same to traditional liquidity pairs)
 
-<div class="warning-box">
-**Important**
-
-These percentages can be configured per pool to better align with specific market conditions and liquidity requirements.
-</div>
+<Callout type="info">
+**Important**: These percentages can be configured per pool to better align with specific market conditions and liquidity requirements.
+</Callout>

@@ -26,16 +26,37 @@ On Swyrl, users can swap tokens for other tokens. Each trade's exchange rate and
 
 #### Visualization
 
-To provide a graphical representation of the swap curves, the graph below illustrates the variance between `0` and `100`. It demonstrates that the **Blue** (Correlated) curve exhibits less slippage from the mean as `k` fluctuates.
+To provide a graphical representation of the swap curves, the graph below illustrates the variance between `0` and `100`. It demonstrates that the <strong style={{ color: '#0052FF' }}>Blue</strong> (Correlated) curve exhibits less slippage from the mean as `k` fluctuates.
 
-> 📷 Image placeholder
 
-**Blue** (#0052FF) = Correlated Curve, **Black** = Volatile Swap Curve
+<div style={{ textAlign: 'center', margin: '1em 0' }}>
+  <iframe
+    src="https://www.desmos.com/calculator/emuoc4kj4s?embed"
+    width="500"
+    height="500"
+    style={{
+      border: '1px solid #ccc',
+      display: 'block',
+      margin: '0 auto',
+    }}
+    frameBorder="0"
+  />
+  <span
+    style={{
+      display: 'block',
+      fontSize: '0.9em',
+      color: '#666',
+      marginTop: '0.5em',
+    }}
+  >
+    <strong style={{ color: '#0052FF' }}>Blue</strong> = Correlated Curve,&nbsp;
+    <strong style={{ color: '#000' }}>Black</strong> = Volatile Swap Curve
+  </span>
+</div>
+
+
 
 ### Fee Structure
-
-<div class="info-box">
-**Speaking of swap fees!**
 
 Fees are adjustable if required, and typically range from:
 
@@ -44,7 +65,7 @@ Fees are adjustable if required, and typically range from:
 - Native **(1%-3%)**.
 
 The theoretical **MIN** and **MAX** for legacy fees is **(0.01 &lt;= Fee &lt;= 5000bps)**. This means the minimum fee is **0.0001%**, and the highest is **50.00%**.
-</div>
+
 
 ## Pairs
 
